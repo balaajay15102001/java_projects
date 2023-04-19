@@ -1,0 +1,58 @@
+.nav{
+    background-color: lightblue;
+}
+.nav:hover{
+    background-color: lightpink;
+}
+.image{
+    margin: -20px;
+    display: flex;
+    padding-left: 10px;
+    justify-content: space-between ;
+}
+.image-wall>img{
+    margin-top: -25px;
+    width: 100%;
+}
+input{
+    padding: 5px;
+    width: 40%;
+}
+.list{
+    margin-left:100px;
+}
+.imageColumn{
+    float:left;
+    margin:0px;
+    padding:0px;
+    background-size: cover;
+}
+ul{
+    list-style-type:none;
+    padding:10px;
+    overflow:hidden;
+    border-radius: 15px;
+    border:1px #ffffff;
+}
+li{
+    float:left;
+}
+li a{
+    display:block;
+    text-align:center;
+    padding:10px 30px;
+    text-decoration:none;
+}
+li a:hover:not(.active){
+    background-color:#f2f2f2;
+    border-radius:25px;
+}
+li a.active{
+    color:black;
+    background-color:#ffffff;
+    border-radius:25px;
+}
+#contact table,th,td{
+    padding: 20px;
+    border: none;
+}
