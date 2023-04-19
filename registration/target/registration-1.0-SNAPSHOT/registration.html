@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body{
+      background-size: 60%;
+      font-family: Calibri;
+      background-color: pink;
+    }
+    .container {
+      width: 60%;
+      padding: 50px;
+      background-color:#E6E6FA;
+    }
+
+    input[type=text], input[type=password]{
+      width: 60%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
+    input[type=text]:focus, input[type=password]:focus {
+      background-color: orange;
+      outline: none;
+    }
+    div {
+      width: 60%;
+      padding: 10px 0;
+    }
+    hr {
+      border: 1px solid #726E6D;
+      margin-bottom: 25px;
+    }
+    .registerbtn {
+      background-color:#008000;
+      color: white;
+      padding: 16px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 70%;
+      opacity: 0.9;
+    }
+    .registerbtn:hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+<form action="index.jsp">
+  <div class="container">
+    <h1> Registration Form</h1> </center>
+    <hr>
+    <p></p><label style="padding: 12px;"> Name </label>
+    <input type="text" name="name" placeholder= "name" size="15" required /></p>
+    <p><label style="padding: 12px;"> DOB </label>
+    <input type="text" name="DOB" placeholder= "dob" size="15" required /></p>
+    <p><label style="padding: 12px;"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required></p>
+    <p style="text-align: left"><label>Current Address :</label></p>
+    <textarea cols="80" rows="5" placeholder="Current Address" value="address" name="address">
+</textarea>
+    <p>
+    <label style="padding: 12px;">Mobile  no:</label>
+    <input type="text" size="15" placeholder="Enter your Mobile number" name="mobile">
+    </p>
+    <button type="submit" class="registerbtn">Register</button>
+  </div>
+</form>
+</body>
+</html>
