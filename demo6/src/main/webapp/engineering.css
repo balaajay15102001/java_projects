@@ -1,0 +1,47 @@
+body{
+    background-color: aqua;
+}
+.courses{
+    background-color: hotpink;
+    background-size: auto;
+    padding-bottom: 30px;
+}
+h3{
+    text-align: center;
+}
+.acadamics{
+    border: 5rem solid white;
+    background-color:white;
+    color: #1ab2ff;
+}
+img{
+    border-radius: 65px;
+    border-bottom-left-radius: 65px;
+    padding-left: 20%;
+    margin-right: 50px;
+}
+.CSE:hover{
+    transform: scale(1.1);
+    box-shadow: 9px 6px 30px 13px rgba(0,0,0,0.75);
+    border-radius: 25px;
+}
+.Mech:hover{
+    transform: scale(1.1);
+    box-shadow: 9px 6px 30px 13px rgba(0,0,0,0.75);
+    border-radius: 25px;
+}
+.civil:hover{
+    transform: scale(1.1);
+    box-shadow: 9px 6px 30px 13px rgba(0,0,0,0.75);
+    border-radius: 25px;
+}
+.BME:hover{
+    transform: scale(1.1);
+    box-shadow: 9px 6px 30px 13px rgba(0,0,0,0.75);
+    border-radius: 25px;
+}
+.IT:hover{
+    transform: scale(1.1);
+    box-shadow: 9px 6px 30px 13px rgba(0,0,0,0.75);
+    border-radius: 25px;
+}
