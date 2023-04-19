@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ajax for External Content</title>
+  <style>
+    .container{
+      border: 1px solid black;
+      border-radius: 25px;
+      background-color: yellow;
+      margin: auto;
+      padding: 30px;
+      width: 30%;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("button").click(function () {
+        // responseTxt - contains the resulting content if the call succeeds
+        // statusTxt - contains the status of the call
+        // xhr - contains the XMLHttpRequest object
+        $("#div1").load("Ex_load.txt", function (responseTxt, statusTxt, xhr) {
+          if (statusTxt == "success")
+            alert("loaded successfully!");
+          if (statusTxt == "error")
+            alert("Error: " + xhr.status + ": " + xhr.statusText);
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+<div class="container">
+<div style="text-align: center"><h2>External content in Ajax</h2></div>
+
+<button>Get External Content</button>
+</div>
+</body>
+</html>

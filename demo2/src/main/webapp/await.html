@@ -1,0 +1,21 @@
+<html>
+<body>
+<h1>The Time is:</h1><h2 id="date"></h2>
+<script>
+  //setInterval is the way to run every 1000 milli sec
+  //call back hell function is the function is used by  methods
+  //1.write commands 2.promises..etc
+  //for call back hell we using await function.
+  async function myfunction() {
+    let d = new Date();
+    let myPromise=new Promise(function(resolve){
+      setInterval(function(){resolve(d.getHours() + ":" + d.getMinutes() + ":" +
+              d.getSeconds());},setInterval(myfunction, 1000));
+    });
+    document.getElementById("date").innerHTML= await myPromise;
+  }
+  myfunction();
+</script>
+</body>
+</html>
+

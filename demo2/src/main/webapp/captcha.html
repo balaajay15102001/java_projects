@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #background {
+      border-radius: 20px;
+      height: 200px;
+      width: 250px;
+      background-color: #E6E6FA;
+      box-shadow: 5px 10px #888888;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+    #captcha {
+      margin-bottom: 1em;
+      font-size: 30px;
+      letter-spacing: 3px;
+    }
+    .center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid black;
+      padding: 50px;
+      width: 30%;
+      margin: auto;
+      border-radius: 25px;
+      background-color: orange;
+      box-shadow: 5px 10px #888888;
+    }
+    #submit {
+      margin-top: 2em;
+      margin-bottom: 2em;
+    }
+    #textBox {
+      height: 25px;
+    }
+
+  </style>
+</head>
+<body>
+<div class="center">
+  <h1>Captcha Validator</h1>
+  <div id="background">
+    <span id="captcha">captcha text</span>
+    <label>Enter your captcha</label>
+    <input id="textBox" type="text" name="text">
+    <div id="buttons">
+      <input id="submit" type="submit">
+      <button id="refresh" type="submit">Refresh</button>
+    </div>
+    <span id="output"></span>
+  </div>
+</div>
+<script>
+  let captcha_Text = document.querySelector('#captcha');
+  let user_Text = document.querySelector('#textBox');
+  let submit = document.querySelector('#submit');
+  let output = document.querySelector('#output');
+  let refresh = document.querySelector('#refresh');
+
+  let alpha_and_numbers = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+    'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
+    'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+  let emptyArr = [];
+  for(let i = 1; i <=6; i++) {
+    emptyArr.push(alpha_and_numbers[Math.floor(Math.random() * alpha_and_numbers.length)]);
+  }
+  captcha_Text.innerHTML = emptyArr.join('');
+
+  user_Text.addEventListener('keyup', function(e) {
+    if(e.keyCode === 13) {
+      if(user_Text.value === captcha_Text.innerHTML) {
+        output.classList.add("greenText");
+        output.innerHTML = "Correct!";
+      }
+      else {
+        output.classList.add("redText");
+        output.innerHTML = "Incorrect, please try again";
+      }
+    }
+  });
+
+  submit.addEventListener('click',  function() {
+    if(user_Text.value === captcha_Text.innerHTML) {
+      output.classList.add("greenText");
+      output.innerHTML = "Correct!";
+    } else {
+      output.classList.add("redText");
+      output.innerHTML = "Incorrect, please try again";
+    }
+  });
+
+  refresh.addEventListener('click', function () {
+    user_Text.value = "";
+    let refreshArr = [];
+    for(let j = 1; j <= 7; j++) {
+      refreshArr.push(alpha_and_numbers[Math.floor(Math.random() * alpha_and_numbers.length)]);
+    }
+    captcha_Text.innerHTML = refreshArr.join('');
+    output.innerHTML = "";
+  });
+
+  submit.addEventListener('keyup', function(e) {
+    if(e.keyCode === 13) {
+      if(user_Text.value === captcha_Text.innerHTML) {
+        console.log("correct!");
+        output.classList.add("greenText");
+        output.innerHTML = "Correct!";
+      } else {
+        output.classList.add("redText");
+        output.innerHTML = "Incorrect, please try again";
+      }
+    }
+  });
+
+
+</script>
+</body>
+</html>

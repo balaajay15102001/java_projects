@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<head>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+
+    }
+
+    th,td {
+      text-align: left;
+      padding: 8px;
+      border: 1px solid black;
+    }
+
+    tr:nth-child(even) {
+      background-color: lightblue;
+    }
+
+    th {
+      background-color: lightpink;
+      text-align: center;
+    }
+
+    .button {
+      position: relative;
+      text-align: center;
+      padding: 10px;
+      border: 4px solid rgb(55, 12, 211);
+      color: black;
+      outline: none;
+      border-radius: 25px;
+      font-size: 30px;
+      width: 300px;
+
+    }
+    .details{
+      width: 80%;
+      margin: auto;
+    }
+
+    .button:hover {
+      color: red;
+      background: white;
+    }
+  </style>
+  <script>
+    function loadXMLDoc() {
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          StudentDetails(this);
+        }
+      };
+      xmlhttp.open("GET", "student.xml", true);
+      xmlhttp.send();
+    }
+
+    function StudentDetails(xml) {
+      var i;
+      var xmlDoc = xml.responseXML;
+      var table =
+              `<tr><th>Name</th><th>Roll_No</th>
+					<th>DOB</th><th>Percentage</th>
+				</tr>`;
+      var x = xmlDoc.getElementsByTagName("student");
+      for (i = 0; i < x.length; i++) {
+        table += "<tr><td>" +
+                x[i].getElementsByTagName("Name")[0]
+                        .childNodes[0].nodeValue + "</td><td>" +
+                x[i].getElementsByTagName("Roll_No")[0]
+                        .childNodes[0].nodeValue + "</td><td>" +
+                x[i].getElementsByTagName("DOB")[0]
+                        .childNodes[0].nodeValue + "</td><td>" +
+                x[i].getElementsByTagName("Percentage")[0]
+                        .childNodes[0].nodeValue + "</td>" ;
+      }
+      document.getElementById("id").innerHTML = table;
+    }
+  </script>
+</head>
+
+<body>
+
+<center>
+  <h1>View the Student Details</h1>
+  <button type="button" class="button"
+          onclick="loadXMLDoc()">
+    Click here
+  </button>
+</center>
+
+<br>
+<div class="details">
+<table id="id"></table>
+</div>
+</body>
+
+</html>

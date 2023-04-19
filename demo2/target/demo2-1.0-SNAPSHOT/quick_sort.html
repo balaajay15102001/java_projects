@@ -1,0 +1,30 @@
+<html>
+<head>
+  <title>Function Closure</title>
+</head>
+<body>
+<script type="text/javascript">
+  function QuickSort(arr){
+    if(arr.length <= 1){
+      return arr;
+    }
+
+    const pivot = arr[arr.length - 1];
+    const leftarr = [];
+    const rightarr = [];
+
+    for(let i=0; i < arr.length-1;i++){
+      arr[i] < pivot ? leftarr.push(arr[i]) :  rightarr.push(arr[i])
+    }
+
+    return [QuickSort(leftarr) ,pivot, QuickSort(rightarr)];
+
+  }
+
+  const  arr=[2,6,9,-7,8,0,1];
+  document.writeln("Normal Array:"+arr);
+  document.writeln("<br>");
+  document.writeln("The Quick Sorted Array:"+QuickSort(arr));
+</script>
+</body>
+</html>

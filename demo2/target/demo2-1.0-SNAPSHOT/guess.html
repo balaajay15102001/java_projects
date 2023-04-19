@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>guess number</title>
+  <style>
+    html {
+      font-family: sans-serif;
+    }
+
+    body {
+      width: 50%;
+      max-width: 800px;
+      min-width: 480px;
+      margin: 0 auto;
+    }
+    .container{
+      border: 10px solid red;
+      box-shadow: 5px 10px #888888;
+      padding: 20px;
+      background-color: yellow;
+      margin-top: 20%;
+      border-radius: 25px;
+    }
+     #sumit{
+      padding: 5px;
+       border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1 style="text-align: center">Guess The Number</h1>
+
+  <p>Guess the number between 1 - 50 and we have only 5 attempts to select.
+    See if you can guess it.</p>
+
+  <div class="form">
+    <label>Enter a guess: </label>
+    <input type = "text" id = "guess_no" class = "guess_no" required>
+    <input type = "submit" value = "Guess"
+            id = "sumit">
+  </div>
+</div>
+<script>
+  var random_no=Math.floor(Math.random()*50 +1);
+  var guess=5;
+
+  document.getElementById("sumit").onclick=function () {
+    var user_guess = document.getElementById("guess_no").value;
+
+    if (user_guess.length === 0) {
+      alert("None of the input you entered")
+    } else {
+      if (random_no == user_guess && guess >= 1) {
+        alert("Congratulations!! You guess the correct number")
+      } else if (random_no > user_guess && guess >= 1) {
+        guess--;
+        alert("OOPS !! your number is smaller than the guess number")
+      } else if (random_no < user_guess && guess >= 1) {
+        guess--;
+        alert("OOPS !! your number is greater than the guess number")
+      } else {
+        alert("Thank you for playing game ");
+      }
+    }
+  }
+</script>
+</body>
+</html>

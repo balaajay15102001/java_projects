@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>current window</title>
+</head>
+<body>
+<p>
+    welcome to get into printer
+</p>
+<p>Click to button to print</p>
+<button id="button1">Print_page</button>
+<script>
+    var print1=document.getElementById("button1");
+    function page(){
+        window.print();
+    }
+    print1.addEventListener("click",page);
+</script>
+</body>
+</html>
