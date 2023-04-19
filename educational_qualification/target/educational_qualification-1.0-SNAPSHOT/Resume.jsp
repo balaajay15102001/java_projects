@@ -1,0 +1,56 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: bala-pt6120
+  Date: 21-10-2022
+  Time: 17:30
+  To change this template use File | Settings | File Templates.
+--%>
+<html>
+<style>
+  body{
+    background-color:white;
+  }
+  table, th, td {
+    border: 1px solid;
+  }
+</style>
+<body>
+  <h3>Educational Qualification</h3>
+<table style="width:80%">
+  <tr>
+    <th>Qualification</th>
+    <th>Specilization</th>
+    <th>School/College</th>
+    <th>Year/of passing</th>
+    <th>Board/University</th>
+    <th>Marks</th>
+  </tr>
+  <tr>
+    <td>B.E.</td>
+    <td>Computer Engineering</td>
+    <td>Rathinam Technical Campus</td>
+    <td>2019-2023</td>
+    <td>Anna University</td>
+    <td>8.45</td>
+  </tr>
+  <tr>
+    <td>12th</td>
+    <td>HSC</td>
+    <td>VHN Hr.Sec School</td>
+    <td>2018-2019</td>
+    <td>Tamil Nadu State board</td>
+    <td>75%</td>
+
+  </tr>
+  <tr>
+    <td>10th</td>
+    <td>SSLC</td>
+    <td>VHN Hr.Sec School</td>
+    <td>2016-2017</td>
+    <td>Tamil Nadu State board</td>
+    <td>90%</td>
+
+  </tr>
+</table>
+</body>
+</html>
