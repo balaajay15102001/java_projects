@@ -1,0 +1,30 @@
+body{
+    background-color: aqua;
+}
+.img{
+    background-color: lightpink;
+    border-radius: 25px;
+    padding-bottom: 10px;
+}
+input,button{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0px;
+}
+.survey{
+    background-color: white;
+    margin: 50px;
+    padding: 30px;
+    border: 1px solid black;
+    border-radius: 25px;
+    box-shadow: 10px 10px 10px;
+}
+table{
+width: 100%;
+}
+th,td{
+    padding: 10px;
+    border: 1px solid black;
+}
+tr:nth-child(odd)
+{background-color:#d9d9d9;}
